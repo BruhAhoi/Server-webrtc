@@ -8,8 +8,9 @@ const recorders = {};
 const chatHistory = {};
 const io = new Server(server, {
   cors: {
-    origin: 'http://localhost:5173',
+    origin: import.meta.env.VITE_FRONTEND_URL || 'http://localhost:5173',
     methods: ['GET', 'POST'],
+    credentials: true,
   },
 });
 
@@ -167,5 +168,5 @@ io.on('connection', socket => {
     }
   });
 });
-
+const PORT = import.meta.env.VITE_PORT_URL
 server.listen(5000, () => console.log('Server is running on port 5000'));
