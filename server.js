@@ -9,12 +9,14 @@ const recorders = {};
 const chatHistory = {};
 const io = new Server(server, {
   cors: {
-    origin: '*',
-    methods: ['GET', 'POST'],
+    origin: [
+      "https://collabsphere.space",
+      "http://localhost:5173"
+    ],
+    methods: ["GET", "POST"],
     credentials: true,
   },
 });
-console.log('url', process.env.FRONTEND_URL)
 
 app.get('/', (req, res) => {
   res.send('Server is running');
