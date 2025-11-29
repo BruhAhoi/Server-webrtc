@@ -9,10 +9,7 @@ const recorders = {};
 const chatHistory = {};
 const io = new Server(server, {
   cors: {
-    origin: [
-      "https://collabsphere.space",
-      "http://localhost:5173"
-    ],
+    origin: "*",
     methods: ["GET", "POST"],
     credentials: true,
   },
