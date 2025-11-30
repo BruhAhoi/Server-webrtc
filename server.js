@@ -13,8 +13,12 @@ const io = new Server(server, {
     methods: ["GET", "POST"],
     credentials: true,
   },
+  transports: ['webscket', 'polling'],
+  pingTimeout: 60000,
+  pingInterval: 25000,
 });
 
+app.set('trust proxy', true)
 app.get('/', (req, res) => {
   res.send('Server is running');
 });
