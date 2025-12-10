@@ -1,7 +1,8 @@
 {
-  "name": "server",
+  "name": "collab-sphere-webrtc-server",
   "version": "1.0.0",
   "type": "module",
+  "description": "WebRTC signaling server for CollabSphere meeting rooms",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
